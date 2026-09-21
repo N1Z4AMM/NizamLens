@@ -1,14 +1,21 @@
 import './Header.css'
 import Logo from '/NizamLens.svg'
-import { MdExpandMore, MdExpandLess } from "react-icons/md"
 import DownloadHover from '../DownloadHover/DownloadHover'
 import { LuMenu } from "react-icons/lu";
 import MobileMenu from '../Menu/Menu'
+import { useState } from 'react'
+import MoreBtn from '../MoreBtn/MoreBtn';
 
 function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    function ShowMenu() {
+        setIsMenuOpen(prev => !prev)
+    }
+
     return (
         <>
-        <header className='Header'>
+        <header className={`Header ${isMenuOpen ? 'hidden' : ''}`}>
             <div className="left">
                 <img src={Logo} alt="NizamLens" title='NizamLens' width={40}/>
                 <span>NIZAMLENS</span>
@@ -22,22 +29,20 @@ function Header() {
                 </div>
                 <div className='content'>
                     <span className='mono'>TOOLS</span>
-                    <MdExpandMore className='more' color='var(--icon)' />
-                    <MdExpandLess className='less' color='var(--icon)' />
+                    <MoreBtn />
                 </div>
                 <div className='content'>
                     <span className='mono'>DOWNLOAD</span>
-                    <MdExpandMore className='more' color='var(--icon)' />
-                    <MdExpandLess className='less' color='var(--icon)' />
+                    <MoreBtn />
                 </div>
             </div>
             <div className="right">
-                <span>LOGIN</span>
-                <button>GET STARTED</button>
-                <LuMenu className='menuBtn' color='var(--icon)' strokeWidth={3} size={16}/>
+                <button>LOGIN</button>
+                <button className='gsd'>GET STARTED</button>
+                <LuMenu className='menuBtn' onClick={ShowMenu} color='var(--icon)' strokeWidth={3} size={16}/>
             </div>
             </header>
-            <MobileMenu className="MobileMenu" />
+            <MobileMenu className={isMenuOpen ? 'MobileMenu show' : 'MobileMenu'} />
             <DownloadHover />
         </>
     )

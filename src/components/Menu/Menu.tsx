@@ -1,6 +1,6 @@
 import './Menu.css'
 import Logo from '/NizamLens.svg'
-import { MdExpandMore, MdExpandLess } from "react-icons/md"
+import { MdExpandMore, MdExpandLess, MdClose } from "react-icons/md"
 
 type MenuProps = {
     className?: string
@@ -10,8 +10,13 @@ function Menu({ className }: MenuProps) {
     return(
         <div className={`Menu ${className ?? ''}`.trim()}>
             <div className="top">
-                <img src={Logo} alt="NizamLens" title='NizamLens' />
+                <div className="left">
+                    <img src={Logo} alt="NizamLens" title='NizamLens' width={40} />
                 <span>NIZAMLENS</span>
+                </div>
+                <div className="right">
+                    <MdClose className='closeBtn' color='var(--icon)' size={16} />
+                </div>
             </div>
             <div className="center">
                 <div className="content">
@@ -32,7 +37,8 @@ function Menu({ className }: MenuProps) {
                 </div>
             </div>
             <div className="bottom">
-
+                <button>LOGIN</button>
+                <button className='gsd'>GET STARTED</button>
             </div>
         </div>
     )

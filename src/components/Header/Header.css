@@ -9,8 +9,8 @@
     flex-direction: row;
     gap: 8px;
     align-items: center;
-    padding: 4px 8px;
-    justify-content: space-around;
+    padding: 12px;
+    justify-content: space-between;
     border-bottom: 1px solid var(--border);
     font-size: 12px;
 }
@@ -19,11 +19,11 @@
     color: var(--text-hover);
 }
 
-.right button{
+.Header .right button{
     font-size: 10px;
 }
 
-.right, .left{
+.Header .right, .left{
     display: flex;
     flex-direction: row;
     gap: 8px;
@@ -32,7 +32,7 @@
     justify-content: center;
 }
 
-.center{
+.Header .center{
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -41,7 +41,7 @@
     justify-content: center;
 }
 
-.center .content{
+.Header .center .content{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,35 +49,35 @@
     transition: all 0.1s ease-in;
 }
 
-.less{
-    display: none;
-}
-
-.center .content:hover .less{
-    display: block;
-}
-
 .MobileMenu{
     display: none;
 }
 
-.center .content:hover .more{
+.MobileMenu.show{
+    display: block;
+}
+
+.Header.hidden{
     display: none;
 }
 
-.content span:hover{
+.menuBtn{
+    margin-right: 8px;
+}
+
+.Header .content span:hover{
     color: var(--text-hover);
     transition: all 0.05s ease;
 }
 
 @media (max-width: 780px) {
-    .center .content{
+    .Header .center .content{
         display: none;
     }
-    .right button{
+    .Header .right button{
         display: none;
     }
-    .right span{
+    .Header .right span{
         display: none;
     }
 }
@@ -86,11 +86,15 @@
     .Header{
         font-size: 16px;
         padding: 8px 16px;
+        justify-content: space-around;
     }
-    .right button{
+    .Header.right button{
         font-size: 16px;
     }
     .menuBtn{
         display: none;
+    }
+    .Header .right button{
+        font-size: 16px;
     }
 }
