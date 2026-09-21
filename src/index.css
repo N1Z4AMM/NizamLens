@@ -1,0 +1,85 @@
+:root {
+  --background: #000000;
+  --surface: #FFFFFF;
+  --surface-hover: #E5E5E5;
+
+  --accent: #38BDF8;
+  --accent-hover: #7DD3FC;
+  --accent-muted: #0369A1;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #A3A3A3;
+  --text-hover: #d3d3d3;
+  --text-muted: #525252;
+  --text-invert: #000000;
+
+  --border: #262626;
+
+  --info: #FFFFFF;
+  --warning: #FACC15;
+  --danger: #EF4444;
+  --error: #DC2626;
+
+  --icon: #A3A3A3;
+  --icon-hover: #FFFFFF;
+}
+
+.mono{
+  font-family: 'DM Mono', monospace;
+  color: var(--text-primary);
+  letter-spacing: -5%;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.sans{
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: -2%;
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'DM Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: var(--text-primary);
+  letter-spacing: -2%;
+}
+
+p, span, button, a{
+  font-family: 'DM Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--text-primary);
+  letter-spacing: -2%;
+}
+
+button{
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.05s ease;
+  cursor: pointer;
+}
+
+button:hover{
+  color: var(--text-hover);
+}
+
+body{
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+}
+
+*{
+  box-sizing: border-box;
+}

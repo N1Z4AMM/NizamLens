@@ -1,0 +1,96 @@
+.Header{
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;   
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    padding: 4px 8px;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.Header .right span:hover{
+    color: var(--text-hover);
+}
+
+.right button{
+    font-size: 10px;
+}
+
+.right, .left{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.center .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.1s ease-in;
+}
+
+.less{
+    display: none;
+}
+
+.center .content:hover .less{
+    display: block;
+}
+
+.MobileMenu{
+    display: none;
+}
+
+.center .content:hover .more{
+    display: none;
+}
+
+.content span:hover{
+    color: var(--text-hover);
+    transition: all 0.05s ease;
+}
+
+@media (max-width: 780px) {
+    .center .content{
+        display: none;
+    }
+    .right button{
+        display: none;
+    }
+    .right span{
+        display: none;
+    }
+}
+
+@media (min-width: 780px) {
+    .Header{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    .right button{
+        font-size: 16px;
+    }
+    .menuBtn{
+        display: none;
+    }
+}
