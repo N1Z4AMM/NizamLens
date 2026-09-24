@@ -12,7 +12,7 @@ function Menu({ className }: MenuProps) {
             <div className="top">
                 <div className="left">
                     <img src={Logo} alt="NizamLens" title='NizamLens' width={40} />
-                <span>NIZAMLENS</span>
+                    <span>NIZAMLENS</span>
                 </div>
                 <div className="right">
                     <MdClose className='closeBtn' color='var(--icon)' size={16} />
