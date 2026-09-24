@@ -4,8 +4,10 @@ import Header from './components/Header/Header.tsx'
 function App(){
   return (
     <div className="App">
-          <Header />
-      {/* <h1 className='sans'>End-to-end secure metadata processing for every RAW format.</h1> */}
+      <div className="AppContent">
+        <h1 className='Mono'>Teuku Muhammad Nizam</h1>
+      </div>
+      <Header />
     </div>
   )
 }

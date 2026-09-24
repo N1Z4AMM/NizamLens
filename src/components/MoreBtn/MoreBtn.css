@@ -1,26 +1,29 @@
-.more{
+.more {
   display: block;
 }
 
-.less{
-    display: none;
+.less {
+  display: none;
 }
 
-.content:hover .less{
+.ExpandMode .more {
+  display: none;
+}
+
+.ExpandMode .less {
+  display: block;
+}
+
+.ExpandMode{
+    border: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .content:hover .more {
+    display: none;
+  }
+
+  .content:hover .less {
     display: block;
-}
-
-.content:hover .more{
-    display: none;
-}
-
-@media (min-width: 780px) {
-    .content:active .less{
-      display: block;
   }
-
-  .content:active .more{
-      display: none;
-  }
-
 }

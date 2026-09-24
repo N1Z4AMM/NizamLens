@@ -1,11 +1,15 @@
-.Menu{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 16px;
+.Menu {
     display: none;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    gap: 16px;
+    background-color: var(--background);
+    z-index: 9999;
 }
 
 .Menu .top{
