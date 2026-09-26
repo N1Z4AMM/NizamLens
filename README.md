@@ -152,7 +152,7 @@ npm run build
 * [x] Photography section structure
 * [x] Design section structure
 * [x] Experiments section structure
-* [ ] Footer
+* [x] Footer
 * [ ] Photography content
 * [ ] Design showcase
 * [ ] Experiments showcase
