@@ -3,11 +3,12 @@ import Logo from '/NizamLens.svg'
 import DownloadHover from '../DownloadHover/DownloadHover'
 import { LuMenu } from "react-icons/lu"
 import MobileMenu from '../Menu/Menu'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import MoreBtn from '../MoreBtn/MoreBtn'
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
 
     function ShowMenu() {
         setIsMenuOpen(prev => !prev)
@@ -17,15 +18,29 @@ function Header() {
         setIsMenuOpen(false)
     }
 
+    
+
+    useEffect(() => {
+        function handleScroll() {
+            setIsScrolled(window.scrollY > 10)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <>
-            <header className={`Header ${isMenuOpen ? 'hidden' : ''}`}>
+            <header className={`Header ${isMenuOpen ? 'hidden' : ''} ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="left">
                     <img
                         src={Logo}
                         alt="NizamLens"
                         title="NizamLens"
-                        width={40}
+                        className='Logo'
                     />
                     <span>NIZAMLENS</span>
                 </div>

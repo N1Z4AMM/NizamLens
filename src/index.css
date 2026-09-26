@@ -3,9 +3,9 @@
   --surface: #FFFFFF;
   --surface-hover: #E5E5E5;
 
-  --accent: #38BDF8;
-  --accent-hover: #7DD3FC;
-  --accent-muted: #0369A1;
+  --accent: #B45309;
+  --accent-hover: #D97706;
+  --accent-muted: #78350F;
 
   --text-primary: #FFFFFF;
   --text-secondary: #A3A3A3;
@@ -83,4 +83,19 @@ body{
 
 *{
   box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--surface);
+    color: var(--text-invert);
+}
+
+.Logo{
+  width: 40px;
+}
+
+@media (min-width: 780px) {
+  .Logo{
+    width: 48px;
+  }
 }

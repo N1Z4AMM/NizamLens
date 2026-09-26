@@ -1,0 +1,76 @@
+.Footer{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.BrandContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.Pages{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+}
+
+.Pages .PagesTop span{
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.Pages .PagesContent span{
+    color: var(--text-secondary);
+    width: fit-content;
+    font-size: 14px;
+}
+
+.PagesContent{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.PagesContent span:hover{
+    color: var(--text-primary);
+}
+
+.Bottom{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Bottom span{
+    text-align: center;
+}
+
+@media (min-width: 780px) {
+    .Footer{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .Brand{
+        align-items: center;
+        justify-items: start;
+    }
+    .Bottom{
+        grid-column: span 2;
+    }
+    .Pages{
+        align-items: center;
+        justify-content: start;
+    }
+}

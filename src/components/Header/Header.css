@@ -1,18 +1,26 @@
-.Header{
+.Header {
     width: 100%;
     height: fit-content;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;   
+    right: 0;
     display: flex;
     flex-direction: row;
     gap: 8px;
     align-items: center;
     padding: 12px;
     justify-content: space-between;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid transparent;
     font-size: 12px;
+    z-index: 900;
+    background: transparent;
+    transition:
+        background-color 0.25s ease,
+        backdrop-filter 0.25s ease,
+        -webkit-backdrop-filter 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .Header .right span:hover{
@@ -70,6 +78,14 @@
     transition: all 0.05s ease;
 }
 
+.Header.scrolled {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 780px) {
     .Header .center .content{
         display: none;
@@ -88,7 +104,7 @@
         padding: 8px 16px;
         justify-content: space-around;
     }
-    .Header.right button{
+    .Header .right button {
         font-size: 16px;
     }
     .menuBtn{

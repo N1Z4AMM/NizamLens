@@ -1,0 +1,161 @@
+.Hero {
+    min-height: calc(100dvh - 64px);
+    padding: 96px 48px 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.heroTop,
+.heroBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.heroTop span,
+.heroBottom span {
+    color: var(--text-secondary);
+}
+
+.heroMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 64px;
+}
+
+.heroTitle h1 {
+    margin: 0;
+
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(64px, 10vw, 160px);
+    line-height: 0.86;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+
+    color: var(--text-primary);
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.heroInfo {
+    width: 280px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.heroRole {
+    margin: 0;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+
+    color: var(--text-primary);
+}
+
+.heroDescription {
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: var(--text-secondary);
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.heroButton {
+    padding: 9px 14px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.heroButton:hover {
+    background-color: var(--surface);
+    color: var(--text-invert);
+    border-color: var(--surface);
+}
+
+.heroScroll {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 780px) {
+    .Hero {
+        min-height: calc(100dvh - 64px);
+        padding: 88px 20px 24px;
+    }
+
+    .heroTop {
+        font-size: 9px;
+    }
+
+    .heroTop span:last-child {
+        display: none;
+    }
+
+    .heroMain {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 40px;
+    }
+
+    .heroTitle h1 {
+        font-size: clamp(48px, 15vw, 90px);
+        line-height: 0.9;
+    }
+
+    .heroInfo {
+        width: 100%;
+        max-width: 320px;
+        gap: 20px;
+    }
+
+    .heroRole {
+        font-size: 13px;
+    }
+
+    .heroDescription {
+        font-size: 13px;
+    }
+
+    .heroBottom {
+        font-size: 9px;
+    }
+
+    .heroScroll {
+        display: none;
+    }
+}

@@ -1,0 +1,17 @@
+.Photography{
+    padding: 32px 48px 32px;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--border);
+}
+
+.PhotographyTop span{
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+@media (max-width: 780px) {
+    .Photography{
+        padding: 24px 20px 24px;
+    }
+}

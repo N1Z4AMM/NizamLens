@@ -1,4 +1,5 @@
 # NizamLens
+<<<<<<< HEAD
 
 > A creative space for photography, design, experiments, and tools.
 
@@ -168,3 +169,5 @@ Created by **Teuku Muhammad Nizam**.
 Built with curiosity, photography, design, and code.
 
 > **See. Create. Experiment.**
+=======
+>>>>>>> dce8ef5 ("v0.4")
