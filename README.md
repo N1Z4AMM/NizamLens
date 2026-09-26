@@ -1,5 +1,4 @@
 # NizamLens
-<<<<<<< HEAD
 
 > A creative space for photography, design, experiments, and tools.
 
