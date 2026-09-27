@@ -92,6 +92,7 @@ body{
 
 .Logo{
   width: 40px;
+  cursor: pointer;
 }
 
 @media (min-width: 780px) {

@@ -42,7 +42,6 @@ function Header() {
                         title="NizamLens"
                         className='Logo'
                     />
-                    <span>NIZAMLENS</span>
                 </div>
 
                 <div className="center">
