@@ -8,5 +8,3 @@ if (!url || !anonKey) {
 }
 
 export const supabase = createClient(url, anonKey);
-
-console.log('anon key length:', anonKey?.length)
