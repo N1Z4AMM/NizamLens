@@ -1,90 +1,37 @@
+import { Link } from 'react-router-dom'
 import './Header.css'
-import Logo from '/NizamLens.svg'
-import DownloadHover from '../DownloadHover/DownloadHover'
-import { LuMenu } from "react-icons/lu"
-import MobileMenu from '../Menu/Menu'
-import { useEffect, useState } from 'react'
-import MoreBtn from '../MoreBtn/MoreBtn'
+import Search from '../Search/Search'
+import { useAuth } from '../../../context/auth'
+
+const logo = `${import.meta.env.BASE_URL}favicon.svg`
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isScrolled, setIsScrolled] = useState(false)
-
-    function ShowMenu() {
-        setIsMenuOpen(prev => !prev)
-    }
-
-    function CloseMenu() {
-        setIsMenuOpen(false)
-    }
-
-    
-
-    useEffect(() => {
-        function handleScroll() {
-            setIsScrolled(window.scrollY > 10)
-        }
-
-        window.addEventListener('scroll', handleScroll)
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+    const { user, loading, signOut } = useAuth()
 
     return (
-        <>
-            <header className={`Header ${isMenuOpen ? 'hidden' : ''} ${isScrolled ? 'scrolled' : ''}`}>
-                <div className="left">
-                    <img
-                        src={Logo}
-                        alt="NizamLens"
-                        title="NizamLens"
-                        className='Logo'
-                    />
-                </div>
-
-                <div className="center">
-                    <div className="content">
-                        <span className="mono">DOCS</span>
-                    </div>
-
-                    <div className="content">
-                        <span className="mono">ABOUT</span>
-                    </div>
-
-                    <div className="content">
-                        <span className="mono">TOOLS</span>
-                        <MoreBtn />
-                    </div>
-
-                    <div className="content">
-                        <span className="mono">DOWNLOAD</span>
-                        <MoreBtn />
-                    </div>
-                </div>
-
-                <div className="right">
-                    <button>LOGIN</button>
-                    <button className="gsd">GET STARTED</button>
-
-                    <LuMenu
-                        className="menuBtn"
-                        onClick={ShowMenu}
-                        color="var(--icon)"
-                        strokeWidth={3}
-                        size={16}
-                    />
-                </div>
-            </header>
-
-            <MobileMenu
-                className={isMenuOpen ? 'MobileMenu show' : 'MobileMenu'}
-                onClose={CloseMenu}
-            />
-
-            <DownloadHover />
-        </>
+        <header className="Header">
+            <div className="HeaderR">
+                <Link to="/" aria-label="NizamLens home">
+                    <img src={logo} alt="NizamLens" className="Logo" width={32} />
+                </Link>
+            </div>
+            <div className="HeaderC">
+                <Search />
+            </div>
+            <div className="HeaderL">
+                {loading ? (
+                    <span className="LoginBtn" style={{ visibility: 'hidden' }}>
+                        Login
+                    </span>
+                ) : user ? (
+                    <button type="button" className="LoginBtn" onClick={signOut}>
+                        Log out
+                    </button>
+                ) : (
+                    <Link to="/login" className="LoginBtn">Login</Link>
+                )}
+            </div>
+        </header>
     )
 }
 

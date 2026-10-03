@@ -1,20 +1,20 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header'
-import Hero from './pages/Hero/Hero'
-import Photography from './pages/Photography/Photography'
-import Desain from './pages/Desain/Desain'
-import Experiments from './pages/Experiments/Experiments'
 import Footer from './components/Footer/Footer'
+import Home from './pages/Home/Home'
+import Login from './pages/Login/Login'
+import './index.css'
 
 function App() {
     return (
         <div className="App">
             <Header />
             <main>
-                <Hero />
-                <Photography />
-                <Desain />
-                <Experiments />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
             </main>
             <Footer />
         </div>

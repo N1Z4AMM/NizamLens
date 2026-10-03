@@ -1,12 +1,10 @@
 import './Footer.css'
-import Logo from '/NizamLens.svg'
-import { FaGithub, FaTiktok, FaInstagram } from "react-icons/fa";
 
 function Footer() {
 
     return (
         <footer className="Footer">
-            <div className="Brand">
+            {/* <div className="Brand">
                 <img className='Logo' src={Logo} alt='Logo' />
             </div>
             <div className="FooterContent">
@@ -25,7 +23,10 @@ function Footer() {
                 <a href="https://github.com/N1Z4AMM">
                     <FaGithub className='SocialsIcons' />
                 </a>
-            </div>
+                <a href="https://id.pinterest.com/NizamLens">
+                    <FaPinterest className='SocialsIcons' />
+                </a>
+            </div> */}
         </footer>
     )
 }
